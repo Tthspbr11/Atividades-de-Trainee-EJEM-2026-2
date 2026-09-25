@@ -1,0 +1,28 @@
+import random
+
+# Lista com as opções do jogo
+opcoes = ["Pedra", "Papel", "Tesoura"]
+
+# Função que compara as jogadas
+def verificar_vencedor(jogador, computador):
+    if jogador == computador:
+        return "Empate!"
+    elif (jogador == "Pedra" and computador == "Tesoura") or \
+         (jogador == "Papel" and computador == "Pedra") or \
+         (jogador == "Tesoura" and computador == "Papel"):
+        return "Você venceu!"
+    else:
+        return "O computador venceu!"
+
+# Entrada do jogador
+jogador = input("Escolha Pedra, Papel ou Tesoura: ")
+
+# Computador escolhe aleatoriamente
+computador = random.choice(opcoes)
+
+# Exibição das escolhas
+print("O computador escolheu:", computador)
+
+# Resultado
+resultado = verificar_vencedor(jogador, computador)
+print(resultado)
