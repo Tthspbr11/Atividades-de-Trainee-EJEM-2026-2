@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  background: #e8edf3;
+  color: #1f2933;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+main {
+  width: 100%;
+  max-width: 380px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin: 0 0 6px;
+}
+
+.subtitulo {
+  margin: 0 0 22px;
+  color: #52606d;
+  font-size: 0.95rem;
+}
+
+.busca {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.busca input {
+  flex: 1;
+  padding: 11px 12px;
+  font-size: 1rem;
+  border: 2px solid #b8c4d0;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.busca input:focus {
+  outline: none;
+  border-color: #3b6fb6;
+}
+
+.busca button {
+  padding: 11px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #c93a3a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.busca button:hover {
+  background: #a82e2e;
+}
+
+.busca button:disabled {
+  background: #9aa5b1;
+  cursor: wait;
+}
+
+.busca button:focus-visible {
+  outline: 3px solid #3b6fb6;
+  outline-offset: 2px;
+}
+
+#mensagem {
+  text-align: center;
+  color: #52606d;
+  min-height: 1.4em;
+  margin: 0 0 10px;
+}
+
+#mensagem.erro {
+  color: #b42318;
+  font-weight: 600;
+}
+
+/* a cor do cartão muda conforme o primeiro tipo do pokémon (via JS) */
+#cartao {
+  --cor: #8a8a6a;
+  background: var(--cor);
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+  color: #fff;
+}
+
+#cartao[hidden] {
+  display: none;
+}
+
+.imagem {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.imagem img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#nome {
+  margin: 14px 0 10px;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+
+#tipos {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 6px;
+  padding: 0;
+  list-style: none;
+}
+
+#tipos li {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 4px 14px;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
