@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block titulo %}Atividade Django{% endblock %}</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f3f4f6; margin: 0; color: #222; }
+        .container { max-width: 520px; margin: 40px auto; background: #fff; padding: 28px;
+                     border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+        h1, h2 { margin-top: 0; }
+        label { display: block; margin: 12px 0 4px; font-weight: bold; }
+        input { width: 100%; padding: 9px; border: 1px solid #bbb; border-radius: 6px; }
+        button { padding: 9px 16px; border: 0; border-radius: 6px; background: #2563eb;
+                 color: #fff; cursor: pointer; margin-top: 14px; }
+        button.perigo { background: #dc2626; margin-top: 0; padding: 6px 12px; }
+        button.sair { background: #6b7280; }
+        .msg { padding: 10px; border-radius: 6px; margin-bottom: 12px; }
+        .msg.success { background: #dcfce7; color: #166534; }
+        .msg.error { background: #fee2e2; color: #991b1b; }
+        .erro-campo { color: #b91c1c; font-size: 13px; margin: 4px 0 0; }
+        ul.produtos { list-style: none; padding: 0; }
+        ul.produtos li { display: flex; justify-content: space-between; align-items: center;
+                         padding: 8px 0; border-bottom: 1px solid #eee; }
+        ul.produtos form { margin: 0; }
+        .linha { display: flex; gap: 10px; }
+        .linha > div { flex: 1; }
+        p.link { margin-top: 18px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="msg {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% block conteudo %}{% endblock %}
+    </div>
+</body>
+</html>
