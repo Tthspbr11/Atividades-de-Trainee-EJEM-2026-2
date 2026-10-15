@@ -1,0 +1,15 @@
+{% extends "contas/base.html" %}
+{% block titulo %}Login{% endblock %}
+{% block conteudo %}
+<h1>Login</h1>
+{% if erro %}<div class="msg error">{{ erro }}</div>{% endif %}
+<form method="post">
+    {% csrf_token %}
+    {% for campo in form %}
+        <label for="{{ campo.id_for_label }}">{{ campo.label }}</label>
+        {{ campo }}
+    {% endfor %}
+    <button type="submit">Entrar</button>
+</form>
+<p class="link">Não tem conta? <a href="{% url 'cadastro' %}">Cadastre-se</a></p>
+{% endblock %}
